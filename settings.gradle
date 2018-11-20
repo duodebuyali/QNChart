@@ -1,0 +1,9 @@
+include ':qnchartlibrary'
+include 'MPChartLib'
+//include 'MPAndroidChart-Realm'
+include 'MPChartExample'
+//include ':MPChartLib-Realm'
+include 'qnbaselibrary'
+project(':qnbaselibrary').projectDir = new File('../qnbaselibrary')
+
+
