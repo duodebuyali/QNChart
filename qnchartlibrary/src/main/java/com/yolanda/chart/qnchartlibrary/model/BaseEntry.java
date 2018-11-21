@@ -1,4 +1,4 @@
-package com.yolanda.chart.qnchartlibrary.bean;
+package com.yolanda.chart.qnchartlibrary.model;
 
 import android.graphics.drawable.Drawable;
 

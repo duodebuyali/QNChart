@@ -13,7 +13,7 @@ public interface AxisConst {
     /**
      * 默认X轴线上的点的最大个数
      */
-    int DEFAULT_MAX_AXIS_NUM_X = 8;
+    int DEFAULT_MAX_AXIS_NUM = 10;
     /**
      * 默认X轴线上的点的最小个数
      */
@@ -22,6 +22,16 @@ public interface AxisConst {
      * 默认的轴线交互处之外的距离
      */
     int DEFAULT_AXIS_SPACE_DP = 2;
+
+    /**
+     * 默认的轴线宽度
+     */
+    float DEFAULT_AXIS_LINE_WIDTH_PX = 1f;
+
+    /**
+     * 默认的限制线宽度
+     */
+    float DEFAULT_LIMIT_LINE_WIDTH_PX = 2f;
 
 
 }

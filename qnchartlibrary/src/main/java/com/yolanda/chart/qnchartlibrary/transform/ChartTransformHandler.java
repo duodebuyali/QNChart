@@ -2,7 +2,7 @@ package com.yolanda.chart.qnchartlibrary.transform;
 
 import android.graphics.Rect;
 
-import com.yolanda.chart.qnchartlibrary.bean.Viewport;
+import com.yolanda.chart.qnchartlibrary.model.Viewport;
 
 /**
  * @author: hekang

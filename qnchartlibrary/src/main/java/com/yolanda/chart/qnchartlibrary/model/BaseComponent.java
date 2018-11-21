@@ -1,9 +1,10 @@
-package com.yolanda.chart.qnchartlibrary.components;
+package com.yolanda.chart.qnchartlibrary.model;
 
-import android.graphics.Color;
+import android.graphics.DashPathEffect;
 import android.graphics.Typeface;
 
 import com.yolanda.chart.qnchartlibrary.consts.AxisConst;
+import com.yolanda.chart.qnchartlibrary.consts.ComponetConst;
 import com.yolanda.health.qnbaselibrary.utils.QNSizeUtils;
 
 /**
@@ -11,7 +12,7 @@ import com.yolanda.health.qnbaselibrary.utils.QNSizeUtils;
  * @description:各个组件的共有的属性描述
  * @date: 2018/11/20 20:11
  */
-abstract class BaseComponent {
+public abstract class BaseComponent {
 
     /**
      * 组件是否需要绘制
@@ -31,12 +32,46 @@ abstract class BaseComponent {
     /**
      * 绘制字体的颜色
      */
-    protected int mTextColor = Color.BLACK;
+    protected int mTextColor = ComponetConst.DEFAULT_TEXT_COLOR;
 
     /**
      * 绘制线的颜色
      */
-    protected int mLineColor = Color.BLACK;
+    protected int mLineColor = ComponetConst.DEFAULT_LINE_COLOR;
+
+    /**
+     * 用来绘制虚线
+     */
+    protected DashPathEffect mDashPathEffect = null;
+
+    /**
+     * 绘制虚线 "- - - - - -"
+     *
+     * @param lineLength  一段虚线中线的长度
+     * @param spaceLength 一段虚线中空格的长度
+     * @param phase       偏移，以度数表示，通常为0
+     */
+    public void enableDashedLine(float lineLength, float spaceLength, float phase) {
+        mDashPathEffect = new DashPathEffect(new float[]{
+                lineLength, spaceLength
+        }, phase);
+    }
+
+    /**
+     * 关闭虚线绘制
+     */
+    public void disableDashedLine() {
+        mDashPathEffect = null;
+    }
+
+    /**
+     * 返回是否开启了虚线绘制
+     *
+     * @return
+     */
+    public boolean isDashedLineEnabled() {
+        return mDashPathEffect != null;
+    }
 
     public boolean isEnabled() {
         return mEnabled;
@@ -76,5 +111,13 @@ abstract class BaseComponent {
 
     public void setLineColor(int mLineColor) {
         this.mLineColor = mLineColor;
+    }
+
+    public DashPathEffect getDashPathEffect() {
+        return mDashPathEffect;
+    }
+
+    public void setDashPathEffect(DashPathEffect mDashPathEffect) {
+        this.mDashPathEffect = mDashPathEffect;
     }
 }
