@@ -74,6 +74,7 @@ public class BaseAxis extends BaseComponent {
      */
     protected float mAxisMax;
 
+
     /**
      * 绘制虚线 "- - - - - -"
      *

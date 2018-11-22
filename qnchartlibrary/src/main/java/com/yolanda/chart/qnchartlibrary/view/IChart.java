@@ -1,6 +1,7 @@
 package com.yolanda.chart.qnchartlibrary.view;
 
 import com.yolanda.chart.qnchartlibrary.gesture.ChartTouchHandler;
+import com.yolanda.chart.qnchartlibrary.model.IChartData;
 import com.yolanda.chart.qnchartlibrary.transform.ChartTransformHandler;
 
 /**
@@ -19,4 +20,11 @@ public interface IChart {
      * 获取触摸监听
      */
     ChartTouchHandler getTouchHandler();
+
+    /**
+     * 当前chart的数据
+     */
+    IChartData getChartData();
+
+
 }

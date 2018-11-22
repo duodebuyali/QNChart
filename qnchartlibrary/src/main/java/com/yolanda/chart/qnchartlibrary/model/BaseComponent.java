@@ -27,7 +27,7 @@ public abstract class BaseComponent {
     /**
      * 绘制字体的大小，默认12sp
      */
-    protected float mTextSize = QNSizeUtils.sp2px(AxisConst.DEFAULT_TEXT_SIZE_SP);
+    protected float mTextSize = AxisConst.DEFAULT_TEXT_SIZE_SP;
 
     /**
      * 绘制字体的颜色
@@ -97,7 +97,7 @@ public abstract class BaseComponent {
         this.mTextSize = mTextSize;
     }
 
-    public int getmTextColor() {
+    public int getTextColor() {
         return mTextColor;
     }
 

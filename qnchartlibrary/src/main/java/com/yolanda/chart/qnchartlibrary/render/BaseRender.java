@@ -1,6 +1,6 @@
 package com.yolanda.chart.qnchartlibrary.render;
 
-import com.yolanda.chart.qnchartlibrary.transform.ChartTransformHandler;
+import com.yolanda.chart.qnchartlibrary.view.IChart;
 
 /**
  * @author: hekang
@@ -10,11 +10,11 @@ import com.yolanda.chart.qnchartlibrary.transform.ChartTransformHandler;
 public class BaseRender {
 
     /**
-     * 描述当前显示的数据范围
+     * 当前需要绘制的chart
      */
-    protected ChartTransformHandler mChartTransformHandler;
+    protected IChart chart;
 
-    public BaseRender(ChartTransformHandler chartTransformHandler) {
-        this.mChartTransformHandler = chartTransformHandler;
+    public BaseRender(IChart chart) {
+        this.chart = chart;
     }
 }
