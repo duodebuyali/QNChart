@@ -1,6 +1,7 @@
 package com.yolanda.chart.qnchartlibrary.model;
 
-import com.yolanda.chart.qnchartlibrary.model.axis.BaseAxis;
+import com.yolanda.chart.qnchartlibrary.model.axis.XAxis;
+import com.yolanda.chart.qnchartlibrary.model.axis.YAxis;
 
 /**
  * @author: hekang
@@ -12,41 +13,41 @@ public interface IChartData {
     /**
      * 获取底部的X轴
      */
-    BaseAxis getAxisXBottom();
+    XAxis getXAxisBottom();
 
     /**
      * 设置底部的X轴
      */
-    void setAxisXBottom(BaseAxis axisX);
+    void setXAxisBottom(XAxis xAxis);
 
     /**
      * 获取左侧的Y轴
      */
-    BaseAxis getAxisYLeft();
+    YAxis getYAxisLeft();
 
     /**
      * 设置左侧的Y轴
      */
-    void setAxisYLeft(BaseAxis axisY);
+    void setYAxisLeft(YAxis yAxis);
 
     /**
      * 获取顶部的X轴
      */
-    BaseAxis getAxisXTop();
+    XAxis getXAxisTop();
 
     /**
      * 设置顶部的X轴
      */
-    void setAxisXTop(BaseAxis axisX);
+    void setXAxisTop(XAxis xAxis);
 
     /**
      * 获取右侧的Y轴
      */
-    BaseAxis getAxisYRight();
+    YAxis getYAxisRight();
 
     /**
      * 设置右侧的Y轴
      */
-    void setAxisYRight(BaseAxis axisY);
+    void setYAxisRight(YAxis yAxis);
 
 }

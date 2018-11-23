@@ -18,10 +18,11 @@ public interface AxisConst {
      * 默认X轴线上的点的最小个数
      */
     int DEFAULT_MIN_AXIS_NUM_X = 2;
+
     /**
-     * 默认的轴线交互处之外的距离
+     * 默认轴线(包含label)与chartView之间的距离
      */
-    int DEFAULT_AXIS_SPACE_DP = 2;
+    int DEFAULT_AXIS_MARGIN_DP = 2;
 
     /**
      * 默认的轴线宽度
@@ -32,23 +33,6 @@ public interface AxisConst {
      * 默认的限制线宽度
      */
     float DEFAULT_LIMIT_LINE_WIDTH_PX = 2f;
-
-    /**
-     * 四条轴线的方向，表示左侧的轴线
-     */
-    int LEFT = 0;
-    /**
-     * 四条轴线的方向，表示顶部的轴线
-     */
-    int TOP = 1;
-    /**
-     * 四条轴线的方向，表示右侧的轴线
-     */
-    int RIGHT = 2;
-    /**
-     * 四条轴线的方向，表示底部的轴线
-     */
-    int BOTTOM = 3;
 
     /**
      * 轴线上label的绘制时，一行最宽的字符串个数

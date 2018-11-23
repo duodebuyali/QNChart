@@ -3,6 +3,7 @@ package com.yolanda.chart.qnchartlibrary.transform;
 import android.graphics.Rect;
 
 import com.yolanda.chart.qnchartlibrary.model.Viewport;
+import com.yolanda.chart.qnchartlibrary.model.axis.BaseAxis;
 
 /**
  * @author: hekang
@@ -52,13 +53,22 @@ public class ChartTransformHandler {
      */
     protected Rect chartViewRect = new Rect();
     /**
+     * 绘制轴线的最大边界所对应的矩形,即除去BaseAxis中设置的axisMargin之后的范围
+     * 参考{@link BaseAxis#setAxisMargin(float)}
+     */
+    protected Rect axisViewRect = new Rect();
+    /**
      * 绘制图表数据的矩形，是传统意义上图表的四个边界包裹的位置
      */
     protected Rect dataViewRect = new Rect();
     /**
-     * 描述dataViewRect绘制数据的范围
+     * 描述dataViewRect绘制数据的当前范围
      */
     protected Viewport currentViewport = new Viewport();
+    /**
+     * 描述dataViewRect绘制数据的最大范围，即为开发者设置的X和Y轴中minAxis与maxAxis的内容
+     */
+    protected Viewport maxViewport = new Viewport();
 
 
     /**
@@ -69,6 +79,8 @@ public class ChartTransformHandler {
         chartViewWidth = width;
         chartViewHeight = height;
         chartViewRect.set(paddingLeft, paddingTop, width - paddingRight, height - paddingBottom);
+        //设置最外层的chartViewRect时，也初始化dataViewRect
+        setDataViewRect(width, height, paddingLeft, paddingTop, paddingRight, paddingBottom);
     }
 
     /**
@@ -79,6 +91,20 @@ public class ChartTransformHandler {
         dataViewWidth = width;
         dataViewHeight = height;
         dataViewRect.set(paddingLeft, paddingTop, width - paddingRight, height - paddingBottom);
+    }
+
+    /**
+     * 设置dataView的额外间隔
+     */
+    public void insetDataViewRect(int deltaLeft, int deltaTop, int deltaRight, int deltaBottom) {
+        dataViewRect.left = dataViewRect.left + deltaLeft;
+        dataViewRect.top = dataViewRect.top + deltaTop;
+        dataViewRect.right = dataViewRect.right - deltaRight;
+        dataViewRect.bottom = dataViewRect.bottom - deltaBottom;
+
+        dataViewWidth = dataViewRect.width();
+        dataViewHeight = dataViewRect.height();
+
     }
 
     /**

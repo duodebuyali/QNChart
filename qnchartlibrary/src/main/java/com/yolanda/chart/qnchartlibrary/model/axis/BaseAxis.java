@@ -14,7 +14,7 @@ import java.util.List;
  * @description:用来描述轴线
  * @date: 2018/11/20 15:36
  */
-public class BaseAxis extends BaseComponent {
+public abstract class BaseAxis extends BaseComponent implements IAxis {
 
     /**
      * 是否绘制轴线
@@ -23,11 +23,11 @@ public class BaseAxis extends BaseComponent {
     /**
      * 轴线的颜色
      */
-    private int mAxisLineColor = mLineColor;
+    protected int mAxisLineColor = mLineColor;
     /**
      * 轴线的宽度，默认1px
      */
-    private float mAxisLineWidth = AxisConst.DEFAULT_AXIS_LINE_WIDTH_PX;
+    protected float mAxisLineWidth = AxisConst.DEFAULT_AXIS_LINE_WIDTH_PX;
 
     /**
      * 是否绘制轴线上的网格线
@@ -36,28 +36,32 @@ public class BaseAxis extends BaseComponent {
     /**
      * 轴线上的网格线的颜色
      */
-    private int mGridColor = Color.GRAY;
+    protected int mGridColor = Color.GRAY;
     /**
      * 轴线上的网格线的宽度，默认1px
      */
-    private float mGridLineWidth = AxisConst.DEFAULT_AXIS_LINE_WIDTH_PX;
+    protected float mGridLineWidth = AxisConst.DEFAULT_AXIS_LINE_WIDTH_PX;
     /**
      * 轴线上网格线绘制时，轴线上的点的间隔数(绘制轴线点的间隔)
      */
-    private int mGridInterval = 1;
+    protected int mGridInterval = 1;
     /**
      * 轴线上的网格线，绘制虚线使用的DashPathEffect
      */
-    private DashPathEffect mGridDashPathEffect = null;
+    protected DashPathEffect mGridDashPathEffect = null;
 
     /**
      * 是否绘制轴线上点的label
      */
     protected boolean mDrawLabels = true;
     /**
+     * 是否绘制轴线的labels在轴线内
+     */
+    protected boolean isLabelsInside;
+    /**
      * 轴线上点的个数，默认{@link AxisConst#DEFAULT_MAX_AXIS_NUM}
      */
-    private int mLabelCount = AxisConst.DEFAULT_MAX_AXIS_NUM;
+    protected int mLabelCount = AxisConst.DEFAULT_MAX_AXIS_NUM;
 
     /**
      * 相对于轴线的限制线
@@ -74,6 +78,18 @@ public class BaseAxis extends BaseComponent {
      */
     protected float mAxisMax;
 
+    /**
+     * 设置轴线的margin值,类似 drawablePadding一样，
+     * 根据轴线的位置所指向的margin对象不同
+     */
+    protected float axisMargin;
+
+    /**
+     * 是否反转轴线
+     * 如果是X轴，表示数据从右侧开始;
+     * 如果是Y轴，表示数据从顶部开始
+     */
+    protected boolean isReverse;
 
     /**
      * 绘制虚线 "- - - - - -"
@@ -241,4 +257,21 @@ public class BaseAxis extends BaseComponent {
     public void setmAxisMax(float mAxisMax) {
         this.mAxisMax = mAxisMax;
     }
+
+    public boolean isLabelsInside() {
+        return isLabelsInside;
+    }
+
+    public void setLabelsInside(boolean labelsInside) {
+        isLabelsInside = labelsInside;
+    }
+
+    public float getAxisMargin() {
+        return axisMargin;
+    }
+
+    public void setAxisMargin(float axisMargin) {
+        this.axisMargin = axisMargin;
+    }
+
 }

@@ -55,8 +55,10 @@ public abstract class BaseChartView extends View implements IChart {
         super.onSizeChanged(w, h, oldw, oldh);
         transformHandler.setChartViewRect(getWidth(), getHeight(), getPaddingLeft(), getPaddingTop(), getPaddingRight(),
                 getPaddingBottom());
+        //设置当前显示的数据窗口的数据范围
+//        transformHandler.setCurrentViewport();
+        axesRenderer.onChartSizeChanged();
 //        chartRenderer.onChartSizeChanged();
-//        axesRenderer.onChartSizeChanged();
     }
 
 

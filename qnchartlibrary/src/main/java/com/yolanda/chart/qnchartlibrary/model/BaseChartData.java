@@ -26,27 +26,27 @@ public class BaseChartData implements IChartData {
     protected BaseAxis baseAxisYRight;
 
     @Override
-    public BaseAxis getAxisXBottom() {
+    public BaseAxis getXAxisBottom() {
         return baseAxisXBottom;
     }
 
     @Override
-    public void setAxisXBottom(BaseAxis axisX) {
+    public void setXAxisBottom(BaseAxis axisX) {
         baseAxisXBottom = axisX;
     }
 
     @Override
-    public BaseAxis getAxisYLeft() {
+    public BaseAxis getYAxisLeft() {
         return baseAxisYLeft;
     }
 
     @Override
-    public void setAxisYLeft(BaseAxis axisY) {
+    public void setYAxisLeft(BaseAxis axisY) {
         baseAxisYLeft = axisY;
     }
 
     @Override
-    public BaseAxis getAxisXTop() {
+    public BaseAxis getXAxisTop() {
         return baseAxisXTop;
     }
 
@@ -56,12 +56,12 @@ public class BaseChartData implements IChartData {
     }
 
     @Override
-    public BaseAxis getAxisYRight() {
+    public BaseAxis getYAxisRight() {
         return baseAxisYRight;
     }
 
     @Override
-    public void setAxisYRight(BaseAxis axisY) {
+    public void setYAxisRight(BaseAxis axisY) {
         baseAxisYRight = axisY;
     }
 }
